@@ -11,9 +11,6 @@ validation_data = list(validation_data)
 test_data = list(test_data)
 
 
-print(test_data[0][0].shape)
-
-
 def evaluate_model(path_model, test_data):
     # Cargar el modelo
     with open(path_model, 'rb') as model_file:
