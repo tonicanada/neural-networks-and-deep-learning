@@ -7,4 +7,4 @@
 loc.py
 src/ec2
 .vscode
-*.joblib
+src/models/svm/
