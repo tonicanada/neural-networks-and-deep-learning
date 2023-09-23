@@ -3,8 +3,8 @@
 *.pem
 *.pkl
 *.pyc
+*.joblib
 .DS_Store
 loc.py
 src/ec2
 .vscode
-src/models/svm/
