@@ -9,6 +9,16 @@ validation_data = list(validation_data)
 test_data = list(test_data)
 
 
+def train_and_save_model(path_model):
+    """
+    Función que entrena el modelo (los parámetros escogidos son los
+    indicados por el autor en el capítulo 1)
+    """
+    net = network.Network([784, 30, 10])
+    net.SGD(training_data, 30, 10, 3.0, test_data=test_data)
+    net.save_model(path_model)
+
+
 def evaluate_model(path_model, test_data):
     """
     Función que retorna el % de aciertos en el test_data set
@@ -28,4 +38,7 @@ def evaluate_model(path_model, test_data):
     return metric
 
 
+# train_and_save_model('./src/models/20230924_784_30_10_model.pkl')
 evaluate_model('./src/models/20230922_784_30_10_model.pkl', test_data)
+evaluate_model('./src/models/20230923_784_30_10_model.pkl', test_data)
+
