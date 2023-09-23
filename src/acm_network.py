@@ -9,12 +9,12 @@ validation_data = list(validation_data)
 test_data = list(test_data)
 
 
-def train_and_save_model(path_model):
+def train_and_save_model(path_model, sizes=[784, 30, 10]):
     """
     Función que entrena el modelo (los parámetros escogidos son los
     indicados por el autor en el capítulo 1)
     """
-    net = network.Network([784, 30, 10])
+    net = network.Network(sizes)
     net.SGD(training_data, 30, 10, 3.0, test_data=test_data)
     net.save_model(path_model)
 
@@ -38,7 +38,12 @@ def evaluate_model(path_model, test_data):
     return metric
 
 
+
+
+
 # train_and_save_model('./src/models/20230924_784_30_10_model.pkl')
-evaluate_model('./src/models/20230922_784_30_10_model.pkl', test_data)
-evaluate_model('./src/models/20230923_784_30_10_model.pkl', test_data)
+# train_and_save_model('./src/models/20230923_784_10_model.pkl', sizes=[784, 10])
+# evaluate_model('./src/models/20230922_784_30_10_model.pkl', test_data)
+# evaluate_model('./src/models/20230923_784_30_10_model.pkl', test_data)
+evaluate_model('./src/models/20230923_784_10_model.pkl', test_data)
 
